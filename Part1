@@ -1,0 +1,66 @@
+#include  <stdio.h>
+#include  <sys/types.h>
+
+#define   MAX_COUNT  200
+
+void  ChildProcess(void);                /* child process prototype  */
+void  ParentProcess(void);               /* parent process prototype */
+void ChildProcess1(void);
+
+void  main(void)
+{
+  pid_t  pid;
+  pid_t pid1;
+
+  pid = fork();
+  if (pid != 0)
+    pid2 = fork();
+
+  int rank;
+int small = 1;
+int big = 50;
+int iter;
+iter = rand() % 30;
+int timer;
+timer = rand() % 10;
+
+pid_t curr;
+pid_t parent;
+curr = getpid();
+parent = getpid();
+
+int j;
+
+if (pid != 0 && pid1 != 0){
+  waitpid(pid, &rank, 0);
+  printf("Child pid: %d has completed\n", pid);
+  waitpid(pid1, &rank, 0);
+  printf("Child pid: %d has completed\n", pid1);
+}
+else{
+  for(i = 0; i<iter; i++){
+    printf("Child process: %d is going to sleep\n", curr);
+    sleep(timer);
+    printf("Child process: %d is awake. Where is my parent: %d \n")
+  }
+}
+      
+}
+
+// void  ChildProcess(void)
+// {
+//      int   i;
+
+//      for (i = 1; i <= MAX_COUNT; i++)
+//           printf("   This line is from child, value = %d\n", i);
+//      printf("   *** Child process is done ***\n");
+// }
+
+// void  ParentProcess(void)
+// {
+//      int   i;
+
+//      for (i = 1; i <= MAX_COUNT; i++)
+//           printf("This line is from parent, value = %d\n", i);
+//      printf("*** Parent is done ***\n");
+// }
